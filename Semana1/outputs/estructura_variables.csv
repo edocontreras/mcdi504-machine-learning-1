@@ -1,0 +1,6 @@
+﻿Variable,Tipo,No nulos,Valores únicos
+Sepal.Length,float64,150,35
+Sepal.Width,float64,150,23
+Petal.Length,float64,150,43
+Petal.Width,float64,150,22
+Species,category,150,3

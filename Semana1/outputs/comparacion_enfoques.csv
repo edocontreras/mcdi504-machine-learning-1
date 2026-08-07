@@ -1,0 +1,4 @@
+﻿Enfoque,Definición operativa,Dato o señal requerida,Ejemplo de uso,Evaluación para IrisFlow
+Supervisado,Aprende una relación entre predictores y una salida conocida,Observaciones con etiqueta,Clasificar Species a partir de medidas morfológicas,Seleccionado: existe etiqueta y la salida es categórica
+No supervisado,Busca estructura sin utilizar una etiqueta objetivo,Observaciones sin etiqueta,Agrupar flores por similitud morfológica ignorando Species,Complementario: no responde al objetivo predictivo principal
+Por refuerzo,Aprende una política mediante interacción y recompensas,"Estados, acciones y recompensa",Optimizar una secuencia de decisiones en un entorno dinámico,Descartado: el dataset es estático y no contiene interacción ni recompensas

@@ -1,0 +1,6 @@
+﻿Etapa KDD,Aplicación en IrisFlow,Función en Fase 1
+Selección,Iris + predictores + Species,Delimita entradas y objetivo
+Preprocesamiento,"Integridad, coincidencias, distribución de clases y atípicos",Caracteriza calidad y estructura de los datos
+Transformación,Codificación exploratoria + Min-Max,Genera representaciones numéricas para el análisis
+Modelamiento / minería de datos,Clasificación supervisada multiclase,Define el enfoque de aprendizaje sin ejecutar entrenamiento
+Interpretación y evaluación,Síntesis de evidencia exploratoria,Relaciona la evidencia obtenida con el problema analítico
