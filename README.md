@@ -14,7 +14,7 @@ El repositorio documenta la Fase 1 del proyecto ABP mediante una única cadena d
 ## Estructura
 
 ```text
-mcdi504-machine-learning-1-entrega_GRUPO6/
+mcdi504-machine-learning-1/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
