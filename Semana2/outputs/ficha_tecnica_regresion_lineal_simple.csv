@@ -1,0 +1,7 @@
+Elemento,Valor
+Estimador,LinearRegression
+Predictor,MedInc
+Preprocesamiento,StandardScaler ajustado con X_train
+Objetivo,MedHouseVal
+Intercepto,2.071946937378876
+Coeficiente,0.798519564426035

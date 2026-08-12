@@ -1,0 +1,10 @@
+Variable,Rol,Descripción
+MedInc,Predictora,"Ingreso mediano del distrito, expresado en decenas de miles de dólares."
+HouseAge,Predictora,Edad media de las viviendas del distrito.
+AveRooms,Predictora,Número medio de habitaciones por vivienda.
+AveBedrms,Predictora,Número medio de dormitorios por vivienda.
+Population,Predictora,Población del distrito.
+AveOccup,Predictora,Número medio de ocupantes por hogar.
+Latitude,Predictora,Latitud del distrito.
+Longitude,Predictora,Longitud del distrito.
+MedHouseVal,Objetivo,"Valor mediano de las viviendas, expresado en cientos de miles de dólares."
