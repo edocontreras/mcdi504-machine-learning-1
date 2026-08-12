@@ -1,83 +1,78 @@
 # MCDI504 · Machine Learning I
-## Fase 1 · Definición y orientación de la situación
+## Proyecto ABP · Grupo 6
 
-**Proyecto:** IrisFlow  
 **Docente:** Dr. David Ruete Zúñiga  
-**Grupo:** 6  
-**Integrantes:** Luis Díaz Giral · Gonzalo Bouldres · Eduardo Contreras  
-**Fecha de entrega:** 08-08-2026
+**Integrantes:** Luis Díaz Giral, Gonzalo Bouldres y Eduardo Contreras  
+**Programa:** Magíster en Ciencia de Datos e Inteligencia Artificial  
+**Universidad:** Universidad Andrés Bello
 
-## Propósito
-
-El repositorio documenta la Fase 1 del proyecto ABP mediante una única cadena de evidencia: definición analítica del problema, notebook ejecutado, datos utilizados, resultados exportados, figuras, decisiones técnicas e informe final. El alcance corresponde a definición del problema, caracterización inicial de datos, selección del tipo de aprendizaje y articulación con KDD; no se ejecuta entrenamiento de modelos ni evaluación predictiva.
-
-## Estructura
+## Estructura del repositorio
 
 ```text
 mcdi504-machine-learning-1/
-├── README.md
-├── requirements.txt
+├── Semana1/
+├── Semana2/
 ├── .gitignore
-└── Semana1/
-    ├── data/
-    │   ├── README.md
-    │   └── iris_original.csv
-    ├── docs/
-    │   ├── DECISIONES_TECNICAS.md
-    │   ├── FUENTES.md
-    │   └── TRAZABILIDAD.md
-    ├── figures/
-    │   ├── boxplot_variables.png
-    │   ├── correlacion_pearson.png
-    │   ├── distribucion_species.png
-    │   ├── flujo_kdd.png
-    │   └── pvalores_pearson.png
-    ├── informe/
-    │   └── MCDI504_S1_1_GRUPO6.pdf
-    ├── notebook/
-    │   └── F1_Definicion.ipynb
-    └── outputs/
-        └── 14 archivos CSV
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 
-## Notebook y evidencia computacional
+## Semana 1 · Fase 1: Definición y orientación de la situación
 
-`Semana1/notebook/F1_Definicion.ipynb` conserva la ejecución completa realizada para la entrega: 22 celdas de código con conteos de ejecución consecutivos del 1 al 22 y sin salidas de error almacenadas. La última celda registra el inventario de la evidencia generada por la misma ejecución.
+**Proyecto:** IrisFlow  
+**Fecha de entrega:** 08-08-2026
 
-La ejecución exporta `iris_original.csv`, 14 archivos CSV y 5 figuras PNG. Los principales resultados son:
+La primera fase documenta la definición analítica del problema, la caracterización inicial del conjunto Iris, el análisis exploratorio, el preprocesamiento básico y su relación con el proceso KDD.
 
-- 150 observaciones y 5 variables; 0 valores faltantes y 3 clases de `Species`.
-- 50 observaciones por clase, equivalentes a 33,33 % por categoría.
-- Dos registros con combinación completa coincidente en los índices 101 y 142; `duplicated().sum()` contabiliza una repetición respecto de una fila previa.
-- Cuatro valores atípicos relativos por Tukey en `Sepal.Width`; no se eliminan automáticamente.
-- La mayor correlación entre predictores corresponde a `Petal.Length`–`Petal.Width` (`r ≈ 0,963`).
-- Para `Sepal.Length`–`Sepal.Width`, `p ≈ 0,152`; con `α = 0,05` no se rechaza `H0: ρ = 0`.
-- La transformación Min-Max se aplica solo a predictores y produce mínimo 0 y máximo 1 en cada variable transformada.
+Principales evidencias:
 
-## Trazabilidad
+- `Semana1/notebook/F1_Definicion.ipynb`
+- `Semana1/data/`
+- `Semana1/outputs/`
+- `Semana1/figures/`
+- `Semana1/docs/`
+- `Semana1/informe/MCDI504_S1_1_GRUPO6.pdf`
 
-La correspondencia entre rúbrica, informe, notebook y archivos exportados se encuentra en [`Semana1/docs/TRAZABILIDAD.md`](Semana1/docs/TRAZABILIDAD.md). Las decisiones y ajustes metodológicos están documentados en [`Semana1/docs/DECISIONES_TECNICAS.md`](Semana1/docs/DECISIONES_TECNICAS.md), y el control de fuentes se mantiene en [`Semana1/docs/FUENTES.md`](Semana1/docs/FUENTES.md).
+## Semana 2 · Fase 2: Búsqueda y recopilación de información
 
-El informe formal se encuentra en [`Semana1/informe/MCDI504_S1_1_GRUPO6.pdf`](Semana1/informe/MCDI504_S1_1_GRUPO6.pdf).
+**Caso de regresión:** California Housing  
+**Variable objetivo:** `MedHouseVal`  
+**Fecha de entrega:** 14-08-2026
 
-## Reproducibilidad
+La segunda fase desarrolla la preparación analítica del conjunto de datos y la implementación de modelos de regresión supervisada. El flujo incluye:
 
-Crear un entorno virtual e instalar las dependencias fijadas en `requirements.txt`:
+1. descripción de California Housing y definición de la variable objetivo;
+2. control de valores faltantes y análisis exploratorio;
+3. partición entrenamiento/prueba 80/20 con `random_state=42`;
+4. selección del predictor para regresión lineal simple utilizando exclusivamente el conjunto de entrenamiento;
+5. estandarización mediante `StandardScaler` ajustado con `X_train`;
+6. regresión lineal simple;
+7. árbol de decisión para regresión;
+8. red neuronal MLP;
+9. evaluación mediante MSE, RMSE y R²;
+10. comparación de modelos y diagnóstico de generalización.
+
+Principales evidencias:
+
+- `Semana2/notebook/F2_Regresion.ipynb`
+- `Semana2/outputs/`
+- `Semana2/figures/`
+- `Semana2/docs/`
+- `Semana2/informe/MCDI504_S2_1_GRUPO6.pdf`
+
+## Reproducción
+
+Instalar las dependencias desde la raíz del repositorio:
 
 ```bash
-python -m venv .venv
-```
-
-Windows PowerShell:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-```bash
-python -m pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+Luego iniciar Jupyter:
+
+```bash
 jupyter notebook
 ```
 
-Abrir `Semana1/notebook/F1_Definicion.ipynb`. Una reproducción desde cero puede realizarse mediante **Restart Kernel and Run All Cells**; la ejecución reemplaza los archivos derivados en `Semana1/outputs/`, `Semana1/figures/` y `Semana1/data/iris_original.csv`.
+Para reproducir la Fase 2, abrir `Semana2/notebook/F2_Regresion.ipynb` y ejecutar las celdas secuencialmente desde el inicio. La primera carga de California Housing puede requerir conexión a Internet si el conjunto no está disponible en la caché local de scikit-learn.
