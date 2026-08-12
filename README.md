@@ -1,5 +1,5 @@
 # MCDI504 · Machine Learning I
-## Proyecto ABP · Grupo 6
+## Grupo 6
 
 **Docente:** Dr. David Ruete Zúñiga  
 **Integrantes:** Luis Díaz Giral, Gonzalo Bouldres y Eduardo Contreras  
