@@ -1,0 +1,20 @@
+{
+  "random_state": 42,
+  "filas_california_housing": 20640,
+  "filas_titanic": 891,
+  "arquitecturas_mlp": {
+    "MLP 1 capa oculta": [
+      100
+    ],
+    "MLP 2 capas ocultas": [
+      100,
+      50
+    ],
+    "MLP 3 capas ocultas": [
+      100,
+      50,
+      25
+    ]
+  },
+  "artefactos_generados": 51
+}

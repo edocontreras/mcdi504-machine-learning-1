@@ -1,0 +1,5 @@
+Objeto,Filas,Porcentaje_aprox
+X_train,16512,80
+X_test,4128,20
+y_train,16512,80
+y_test,4128,20

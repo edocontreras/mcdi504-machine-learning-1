@@ -1,0 +1,4 @@
+Modelo,hidden_layer_sizes,activation,solver,alpha,batch_size,learning_rate,learning_rate_init,max_iter,early_stopping,validation_fraction,n_iter_no_change,tol,random_state
+MLP 1 capa oculta,"(100,)",relu,adam,0.0001,auto,constant,0.001,500,True,0.15,20,0.0001,42
+MLP 2 capas ocultas,"(100, 50)",relu,adam,0.0001,auto,constant,0.001,500,True,0.15,20,0.0001,42
+MLP 3 capas ocultas,"(100, 50, 25)",relu,adam,0.0001,auto,constant,0.001,500,True,0.15,20,0.0001,42

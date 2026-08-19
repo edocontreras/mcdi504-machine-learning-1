@@ -1,0 +1,2 @@
+Hallazgo,Cantidad,Decision,Justificacion
+Filas exactamente repetidas considerando las 15 columnas,107,Conservar,El dataset no contiene un identificador único de pasajero; una coincidencia exacta de atributos no permite demostrar que se trate de un registro duplicado. Se conserva la muestra canónica de 891 observaciones.

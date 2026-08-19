@@ -1,0 +1,16 @@
+Variable,Rol_decision
+survived,Objetivo binario
+pclass,Predictora ordinal (tratada numéricamente)
+age,Predictora numérica continua
+sibsp,Predictora numérica discreta
+parch,Predictora numérica discreta
+fare,Predictora numérica continua
+sex,Predictora categórica binaria
+embarked,Predictora categórica nominal
+class,Excluida: redundante con pclass
+who,Excluida: derivada de sex/age
+adult_male,Excluida: derivada de sex/age
+deck,Excluida: alta ausencia
+embark_town,Excluida: redundante con embarked
+alive,Excluida: fuga de información respecto de survived
+alone,Excluida: derivada de sibsp/parch
