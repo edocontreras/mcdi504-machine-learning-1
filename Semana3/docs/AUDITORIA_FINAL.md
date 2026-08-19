@@ -58,3 +58,13 @@
 - `.gitkeep` eliminado de carpetas pobladas.
 - Sin archivos temporales de Office.
 - Documentación actualizada al estado post-ejecución.
+
+## Metadatos documentales
+
+- Título interno DOCX/PDF actualizado a `MCDI504 - Evaluación Sumativa 2 - Informe Final de Proyecto Fases 2 y 3`.
+- Asunto actualizado a `Regresión y clasificación supervisada - Semana 3`.
+- Autoría actualizada a los tres integrantes del grupo.
+- Palabras clave actualizadas al alcance real de RA2/RA3.
+- Referencias ordenadas alfabéticamente, con cursivas de elementos APA y correspondencia entre Pedregosa et al. (2011) y una cita en el texto.
+- URL pública del repositorio incorporada en la sección IX.
+- La reexportación conserva 23 páginas y no modifica el contenido analítico ni los resultados del notebook.
