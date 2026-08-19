@@ -1,78 +1,76 @@
 # MCDI504 · Machine Learning I
 ## Grupo 6
 
-**Docente:** Dr. David Ruete Zúñiga  
 **Integrantes:** Luis Díaz Giral, Gonzalo Bouldres y Eduardo Contreras  
+**Docente:** Dr. David Ruete Zúñiga  
 **Programa:** Magíster en Ciencia de Datos e Inteligencia Artificial  
 **Universidad:** Universidad Andrés Bello
 
-## Estructura del repositorio
+## Evaluación Sumativa 2 · Semana 3
 
-```text
-mcdi504-machine-learning-1/
-├── Semana1/
-├── Semana2/
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
-```
+Repositorio consolidado del proyecto ABP que integra:
 
-## Semana 1 · Fase 1: Definición y orientación de la situación
+- **RA2:** regresión supervisada y evaluación mediante MSE, RMSE y R².
+- **RA3:** clasificación supervisada mediante redes neuronales superficiales, matrices de confusión y métricas de clasificación.
 
-**Proyecto:** IrisFlow  
-**Fecha de entrega:** 08-08-2026
+Las carpetas `Semana1/` y `Semana2/` se preservan como evidencia histórica. `Semana3/` contiene la corrida ejecutada, sus tablas, figuras, documentación e informe final.
 
-La primera fase documenta la definición analítica del problema, la caracterización inicial del conjunto Iris, el análisis exploratorio, el preprocesamiento básico y su relación con el proceso KDD.
+## Estado de la corrida archivada
 
-Principales evidencias:
+- Notebook: `Semana3/notebook/F3_RedesNeuronales.ipynb`
+- Celdas de código ejecutadas: **15/15**
+- Errores de ejecución: **0**
+- Control final del notebook: **Validación de artefactos: OK**
+- `random_state`: **42**
+- Registros California Housing: **20.640**
+- Registros Titanic: **891**
 
-- `Semana1/notebook/F1_Definicion.ipynb`
-- `Semana1/data/`
-- `Semana1/outputs/`
-- `Semana1/figures/`
-- `Semana1/docs/`
-- `Semana1/informe/MCDI504_S1_1_GRUPO6.pdf`
+## Resultados principales
 
-## Semana 2 · Fase 2: Búsqueda y recopilación de información
+### Regresión
 
-**Caso de regresión:** California Housing  
-**Variable objetivo:** `MedHouseVal`  
-**Fecha de entrega:** 14-08-2026
+El **MLPRegressor** presentó el mejor desempeño de prueba de los modelos comparados:
 
-La segunda fase desarrolla la preparación analítica del conjunto de datos y la implementación de modelos de regresión supervisada. El flujo incluye:
+- RMSE test: **0.549301**
+- R² test: **0.769742**
+- Gap R² train-test: **0.020083**
 
-1. descripción de California Housing y definición de la variable objetivo;
-2. control de valores faltantes y análisis exploratorio;
-3. partición entrenamiento/prueba 80/20 con `random_state=42`;
-4. selección del predictor para regresión lineal simple utilizando exclusivamente el conjunto de entrenamiento;
-5. estandarización mediante `StandardScaler` ajustado con `X_train`;
-6. regresión lineal simple;
-7. árbol de decisión para regresión;
-8. red neuronal MLP;
-9. evaluación mediante MSE, RMSE y R²;
-10. comparación de modelos y diagnóstico de generalización.
+El ajuste del árbol mediante GridSearchCV redujo RMSE en **16.80%** respecto de la configuración inicial. La configuración seleccionada fue `max_depth=12`, `min_samples_leaf=10` y `min_samples_split=2`.
 
-Principales evidencias:
+### Clasificación
 
-- `Semana2/notebook/F2_Regresion.ipynb`
-- `Semana2/outputs/`
-- `Semana2/figures/`
-- `Semana2/docs/`
-- `Semana2/informe/MCDI504_S2_1_GRUPO6.pdf`
+Las arquitecturas evaluadas fueron `(100,)`, `(100, 50)` y `(100, 50, 25)`.
 
-## Reproducción
+El **MLP con dos capas ocultas** obtuvo el mejor desempeño global equilibrado en esta corrida:
 
-Instalar las dependencias desde la raíz del repositorio:
+- Accuracy: **0.793296**
+- Recall: **0.724638**
+- F1-score: **0.729927**
+- Balanced accuracy: **0.780501**
+- Falsos negativos: **19**
+
+La arquitectura de tres capas presentó la mayor precision y especificidad, pero menor recall y mayor brecha F1 train-test.
+
+## Reproducibilidad
 
 ```bash
-pip install -r requirements.txt
-```
-
-Luego iniciar Jupyter:
-
-```bash
+python -m pip install -r requirements.txt
 jupyter notebook
 ```
 
-Para reproducir la Fase 2, abrir `Semana2/notebook/F2_Regresion.ipynb` y ejecutar las celdas secuencialmente desde el inicio. La primera carga de California Housing puede requerir conexión a Internet si el conjunto no está disponible en la caché local de scikit-learn.
+Abrir `Semana3/notebook/F3_RedesNeuronales.ipynb`, reiniciar el kernel y ejecutar todas las celdas en orden. El notebook regenera `Semana3/outputs/` y `Semana3/figures/`.
+
+## Estructura de Semana 3
+
+```text
+Semana3/
+├── data/
+├── notebook/
+│   └── F3_RedesNeuronales.ipynb
+├── outputs/
+├── figures/
+├── docs/
+└── informe/
+    ├── f3_s03_grupo6.docx
+    └── f3_s03_grupo6.pdf
+```
