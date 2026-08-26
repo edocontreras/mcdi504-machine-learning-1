@@ -1,0 +1,4 @@
+Tecnica,Ajustes_externos,Conjunto_evaluado,Uso_semana4
+Hold-Out histórico 80/20,1,test,Evaluación y continuidad con Semana 3
+K-Fold estratificado,5,train,Estimación de estabilidad
+Leave-One-Out,712,train,No implementado; referencia de costo

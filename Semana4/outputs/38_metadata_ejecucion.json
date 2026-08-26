@@ -1,0 +1,88 @@
+{
+  "random_state": 42,
+  "test_size": 0.2,
+  "n_splits": 5,
+  "tecnica_validacion": "StratifiedKFold",
+  "umbral_clasificacion": 0.5,
+  "clase_positiva": 1,
+  "modelo": "MLP 2 capas ocultas",
+  "arquitectura": [
+    100,
+    50
+  ],
+  "dataset_sha256": "81787d320d7f7b03df935e91de8bd19e11d45c5bbcab86ef4d4a76dc91b7d4f2",
+  "n_total": 891,
+  "n_train": 712,
+  "n_test": 179,
+  "versiones": {
+    "Python": "3.12.4",
+    "NumPy": "1.26.4",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.4.2",
+    "Matplotlib": "3.8.4"
+  },
+  "metricas_holdout": {
+    "Accuracy": 0.7932960893854749,
+    "Precision": 0.7352941176470589,
+    "Recall": 0.7246376811594203,
+    "F1_score": 0.7299270072992701,
+    "Balanced_accuracy": 0.7805006587615283,
+    "Especificidad": 0.8363636363636363,
+    "ROC_AUC": 0.8521739130434781,
+    "Average_precision": 0.7890822694080781
+  },
+  "resumen_cv": {
+    "Accuracy": {
+      "promedio": 0.825844577957254,
+      "std_poblacional": 0.012062186881994546,
+      "std_muestral": 0.013485934912723018
+    },
+    "Precision": {
+      "promedio": 0.8346889498488783,
+      "std_poblacional": 0.037326416450000954,
+      "std_muestral": 0.04173220226933425
+    },
+    "Recall": {
+      "promedio": 0.684983164983165,
+      "std_poblacional": 0.05506614343513511,
+      "std_muestral": 0.061565819989857946
+    },
+    "F1_score": {
+      "promedio": 0.7499880399041645,
+      "std_poblacional": 0.025876712235023865,
+      "std_muestral": 0.02893104379585694
+    },
+    "Balanced_accuracy": {
+      "promedio": 0.7992444560548009,
+      "std_poblacional": 0.01806286682435232,
+      "std_muestral": 0.02019489904388877
+    },
+    "Especificidad": {
+      "promedio": 0.9135057471264367,
+      "std_poblacional": 0.029151123664547248,
+      "std_muestral": 0.03259194706721521
+    },
+    "FPR": {
+      "promedio": 0.08649425287356322,
+      "std_poblacional": 0.02915112366454727,
+      "std_muestral": 0.032591947067215236
+    },
+    "FNR": {
+      "promedio": 0.31501683501683503,
+      "std_poblacional": 0.05506614343513512,
+      "std_muestral": 0.06156581998985795
+    },
+    "ROC_AUC": {
+      "promedio": 0.8622692045850353,
+      "std_poblacional": 0.017722283002378058,
+      "std_muestral": 0.0198141147549032
+    },
+    "Average_precision": {
+      "promedio": 0.8393308019420193,
+      "std_poblacional": 0.02353352152698523,
+      "std_muestral": 0.026311276942146813
+    }
+  },
+  "n_advertencias_cv": 0,
+  "n_advertencias_holdout": 0
+}

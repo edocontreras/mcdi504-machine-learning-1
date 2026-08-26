@@ -1,0 +1,9 @@
+Elemento,Valor
+Filas,891
+Columnas_originales,15
+Predictores_seleccionados,7
+Variable_objetivo,survived
+Clase_positiva,1
+Clase_negativa,0
+Filas_exactamente_repetidas_dataset,107
+Filas_repetidas_variables_modelo_y_objetivo,111

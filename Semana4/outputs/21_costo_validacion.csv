@@ -1,0 +1,6 @@
+Indicador,Valor,Unidad
+Ajustes_externos_KFold,5.0,ajustes
+Tiempo_total_KFold,1.2237884000060149,segundos
+Tiempo_promedio_ajuste_fold,0.2191231400007382,segundos
+Ajustes_teoricos_LOOCV,712.0,ajustes
+Ajustes_HoldOut,1.0,ajustes

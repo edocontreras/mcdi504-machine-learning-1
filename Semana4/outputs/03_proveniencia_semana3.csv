@@ -1,0 +1,7 @@
+Elemento,Valor
+Dataset_fuente,Semana3/data/titanic.csv
+Dataset_semana4,Semana4/data/titanic.csv
+SHA256_dataset,81787d320d7f7b03df935e91de8bd19e11d45c5bbcab86ef4d4a76dc91b7d4f2
+Modelo_seleccionado_semana3,MLP 2 capas ocultas
+Arquitectura,"(100, 50)"
+Random_state,42

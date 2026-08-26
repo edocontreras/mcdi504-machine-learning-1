@@ -1,0 +1,14 @@
+Parametro,Coincide_semana3
+hidden_layer_sizes,True
+activation,True
+solver,True
+alpha,True
+batch_size,True
+learning_rate,True
+learning_rate_init,True
+max_iter,True
+early_stopping,True
+validation_fraction,True
+n_iter_no_change,True
+tol,True
+random_state,True

@@ -1,0 +1,6 @@
+Elemento,Valor
+Clase_positiva,1
+Umbral,0.5
+Optimizado_con_test,False
+Criterio,Continuidad con Semana 3 y ausencia de una función de costos definida
+Coincide_con_predict_sklearn,True

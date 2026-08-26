@@ -1,0 +1,9 @@
+Metrica,Definicion,Referencia_clase
+Accuracy,(TP + TN) / (TP + TN + FP + FN),Ambas clases
+Precision,TP / (TP + FP),Positiva = 1
+Recall,TP / (TP + FN),Positiva = 1
+F1_score,2 * Precision * Recall / (Precision + Recall),Positiva = 1
+Balanced_accuracy,Promedio de sensibilidad y especificidad,Ambas clases
+Especificidad,TN / (TN + FP),Negativa = 0
+ROC_AUC,Área bajo la curva ROC,Positiva = 1
+Average_precision,Resumen de precision-recall ponderado por incrementos de recall,Positiva = 1

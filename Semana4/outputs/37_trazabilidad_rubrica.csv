@@ -1,0 +1,18 @@
+Criterio,Evidencia_notebook,Artefactos
+C1 Evaluación del desempeño,"Secciones 2, 3, 4 y 6",04_diccionario_variables.csv; 22_metricas_holdout.csv; 23_matriz_confusion_holdout.csv
+C2 Reporte tabulado de métricas,Sección 6,22_metricas_holdout.csv; 26_reporte_clasificacion_holdout.csv
+C3 Matriz de confusión y métricas,Sección 6,22_metricas_holdout.csv; 23_matriz_confusion_holdout.csv; figura 05
+C4 Interpretación del desempeño,Evidencia cuantitativa para el informe,24_predicciones_holdout.csv; 25_errores_holdout.csv; 22_metricas_holdout.csv
+C5 Toma de decisiones,Evidencia cuantitativa para el informe,30_control_umbral.csv; 35_comparacion_holdout_cv.csv; curvas ROC y PR
+C6 Notebook y trazabilidad de evaluación,Flujo completo y control final,00-40 outputs; figuras 01-08; manifiesto
+C7 Conclusiones del desempeño,Evidencia cuantitativa para el informe,22_metricas_holdout.csv; 25_errores_holdout.csv; 29_advertencias_holdout.csv
+C8 Estabilidad de métricas,Sección 5,14_metricas_cv_por_fold.csv; 15_resumen_estabilidad_cv.csv; figuras 02-04
+C9 Justificación de validación,Sección 4 y costo observado,13_protocolo_validacion.csv; 21_costo_validacion.csv
+C10 Coherencia metodológica,Pipeline dentro de cada fold; CV solo en train,10b_verificacion_split_semana3.csv; 12_configuracion_evaluacion.csv; 19_balance_clases_cv.csv; 28_control_preprocesamiento.csv
+C11 Notebook y trazabilidad de validación,Sección 5 y control final,14-21 outputs; 18_predicciones_oof_cv.csv; 39_manifiesto_artefactos.csv
+C12 Conclusiones de validación,Evidencia cuantitativa para el informe,15_resumen_estabilidad_cv.csv; 21_costo_validacion.csv; 35_comparacion_holdout_cv.csv
+C13 Portada e índice,No corresponde al cuaderno,Debe cubrirse en el informe final
+C14 Formato institucional,No corresponde al cuaderno,Debe cubrirse en el PDF final
+C15 Ortografía y gramática,Nomenclatura y documentación técnica formal,Revisión final del informe y notebook
+C16 Fuentes y referencias,No sustituye la citación del informe,Debe cubrirse en el informe final con fuentes requeridas
+C17 Anexos,Tablas y figuras reproducibles,Semana4/outputs/ y Semana4/figures/

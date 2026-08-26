@@ -1,0 +1,7 @@
+Control,Valor_semana3,Valor_semana4,Coincide
+Filas_X_train,712,712,True
+Filas_X_test,179,179,True
+Filas_y_train,712,712,True
+Filas_y_test,179,179,True
+Proporcion_Train,0.616573033708;0.383426966292,0.616573033708;0.383426966292,True
+Proporcion_Test,0.614525139665;0.385474860335,0.614525139665;0.385474860335,True

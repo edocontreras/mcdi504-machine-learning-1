@@ -1,0 +1,16 @@
+Metrica_o_control,Tipo_control,Valor_semana3,Valor_semana4,Diferencia_absoluta,Coincide
+Accuracy,critico,0.7932960893854749,0.7932960893854749,0.0,True
+Precision,critico,0.7352941176470589,0.7352941176470589,0.0,True
+Recall,critico,0.7246376811594203,0.7246376811594203,0.0,True
+F1_score,critico,0.7299270072992701,0.7299270072992701,0.0,True
+Balanced_accuracy,critico,0.7805006587615283,0.7805006587615283,0.0,True
+Especificidad,critico,0.8363636363636363,0.8363636363636363,0.0,True
+TN,critico,92,92,0.0,True
+FP,critico,18,18,0.0,True
+FN,critico,19,19,0.0,True
+TP,critico,50,50,0.0,True
+Iteraciones,informativo,52,52,0.0,True
+Detencion_antes_max_iter,informativo,True,True,0.0,True
+Best_validation_score,informativo,0.8785046728971962,0.8785046728971962,0.0,True
+Loss_final,informativo,0.4048335712479051,0.4048335712479051,0.0,True
+Parametros_entrenables,critico,6001,6001,0.0,True

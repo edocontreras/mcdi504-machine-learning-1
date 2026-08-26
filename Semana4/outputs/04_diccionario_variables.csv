@@ -1,0 +1,16 @@
+Variable,Rol,Tipo,Tratamiento,Justificacion
+survived,Objetivo,Binaria,Sin transformación,Variable objetivo del caso
+pclass,Predictor,Numérica ordinal,Imputación mediana + estandarización,Predictor definido en Semana 3
+age,Predictor,Numérica continua,Imputación mediana + estandarización,Predictor definido en Semana 3
+sibsp,Predictor,Numérica discreta,Imputación mediana + estandarización,Predictor definido en Semana 3
+parch,Predictor,Numérica discreta,Imputación mediana + estandarización,Predictor definido en Semana 3
+fare,Predictor,Numérica continua,Imputación mediana + estandarización,Predictor definido en Semana 3
+sex,Predictor,Categórica,Imputación moda + One-Hot Encoding,Predictor definido en Semana 3
+embarked,Predictor,Categórica,Imputación moda + One-Hot Encoding,Predictor definido en Semana 3
+alive,Excluida,Categórica,No utilizada,Fuga directa respecto de survived
+class,Excluida,Categórica,No utilizada,Redundancia con pclass
+embark_town,Excluida,Categórica,No utilizada,Redundancia con embarked
+who,Excluida,Categórica,No utilizada,Variable derivada
+adult_male,Excluida,Binaria,No utilizada,Variable derivada
+alone,Excluida,Binaria,No utilizada,Variable derivada
+deck,Excluida,Categórica,No utilizada,Alta proporción de valores faltantes
