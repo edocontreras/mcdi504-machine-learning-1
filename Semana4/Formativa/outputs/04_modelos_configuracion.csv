@@ -1,0 +1,8 @@
+Modelo,Configuracion
+KNN,n_neighbors=5; metric=minkowski; p=2; escalamiento numérico
+Árbol de decisión,criterion=gini; max_depth=5; random_state=42
+SVM,kernel=rbf; C=1; escalamiento numérico
+Naive Bayes,GaussianNB
+MLP 1 capa oculta,"hidden_layer_sizes=(100,); parámetros MLP heredados de Semana 3"
+MLP 2 capas ocultas,"hidden_layer_sizes=(100, 50); parámetros MLP heredados de Semana 3"
+MLP 3 capas ocultas,"hidden_layer_sizes=(100, 50, 25); parámetros MLP heredados de Semana 3"

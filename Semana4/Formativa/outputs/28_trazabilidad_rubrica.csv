@@ -1,0 +1,10 @@
+Criterio,Evidencia_notebook,Artefactos
+C1 Descripción de modelos y dataset,Secciones 1-2,01_perfil_dataset.csv; 03_distribucion_clases.csv; 04_modelos_configuracion.csv
+C2 Preparación del proceso de evaluación,Sección 2,06_dimensiones_split.csv; 07_balance_train_test.csv; 08_criterios_metricas.csv
+C3 Evaluación de modelos supervisados,Sección 3,09_metricas_holdout_modelos.csv; 14_ranking_preliminar.csv
+C4 Matriz de confusión y métricas,Sección 3,09_metricas_holdout_modelos.csv; 12_matrices_confusion_holdout.csv; figuras 06-12
+C5 Validación cruzada MLP una capa,Sección 4,16_cv_mlp1_metricas_por_fold.csv; 22_cv_mlp1_resumen_estabilidad.csv; 21_cv_mlp1_matriz_agregada.csv
+C6 Interpretación comparativa,Sección 5,25_comparacion_mlp1_holdout_cv.csv; 27_resumen_para_decision.csv
+C7 Justificación metodológica,Secciones 4-5,24_costo_validacion.csv; 22_cv_mlp1_resumen_estabilidad.csv
+C8 Notebook y documentación,Flujo completo y control final,28_trazabilidad_rubrica.csv; 29_control_artefactos_requeridos.csv
+C10-C14 Criterios formales,No sustituyen al informe PDF,Se completan en el informe final con resultados de esta ejecución

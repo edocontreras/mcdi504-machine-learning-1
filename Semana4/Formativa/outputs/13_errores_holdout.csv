@@ -1,0 +1,260 @@
+Modelo,Indice_original,y_real,y_pred,Tipo_error
+KNN,553,1,0,FN
+KNN,559,1,0,FN
+KNN,698,0,1,FP
+KNN,216,1,0,FN
+KNN,279,1,0,FN
+KNN,712,1,0,FN
+KNN,455,1,0,FN
+KNN,489,1,0,FN
+KNN,297,0,1,FP
+KNN,502,0,1,FP
+KNN,17,1,0,FN
+KNN,578,0,1,FP
+KNN,593,0,1,FP
+KNN,501,0,1,FP
+KNN,431,1,0,FN
+KNN,55,1,0,FN
+KNN,570,1,0,FN
+KNN,271,1,0,FN
+KNN,23,1,0,FN
+KNN,245,0,1,FP
+KNN,146,1,0,FN
+KNN,726,1,0,FN
+KNN,826,0,1,FP
+KNN,444,1,0,FN
+KNN,137,0,1,FP
+KNN,587,1,0,FN
+KNN,804,1,0,FN
+KNN,731,0,1,FP
+KNN,11,1,0,FN
+KNN,484,1,0,FN
+KNN,879,1,0,FN
+KNN,199,0,1,FP
+KNN,142,1,0,FN
+Árbol de decisión,553,1,0,FN
+Árbol de decisión,559,1,0,FN
+Árbol de decisión,536,0,1,FP
+Árbol de decisión,216,1,0,FN
+Árbol de decisión,279,1,0,FN
+Árbol de decisión,712,1,0,FN
+Árbol de decisión,455,1,0,FN
+Árbol de decisión,65,1,0,FN
+Árbol de decisión,489,1,0,FN
+Árbol de decisión,869,1,0,FN
+Árbol de decisión,165,1,0,FN
+Árbol de decisión,297,0,1,FP
+Árbol de decisión,502,0,1,FP
+Árbol de decisión,17,1,0,FN
+Árbol de decisión,679,1,0,FN
+Árbol de decisión,106,1,0,FN
+Árbol de decisión,578,0,1,FP
+Árbol de decisión,690,1,0,FN
+Árbol de decisión,593,0,1,FP
+Árbol de decisión,501,0,1,FP
+Árbol de decisión,431,1,0,FN
+Árbol de decisión,452,0,1,FP
+Árbol de decisión,55,1,0,FN
+Árbol de decisión,570,1,0,FN
+Árbol de decisión,271,1,0,FN
+Árbol de decisión,252,0,1,FP
+Árbol de decisión,23,1,0,FN
+Árbol de decisión,146,1,0,FN
+Árbol de decisión,555,0,1,FP
+Árbol de decisión,826,0,1,FP
+Árbol de decisión,549,1,0,FN
+Árbol de decisión,444,1,0,FN
+Árbol de decisión,802,1,0,FN
+Árbol de decisión,587,1,0,FN
+Árbol de decisión,804,1,0,FN
+Árbol de decisión,492,0,1,FP
+Árbol de decisión,823,1,0,FN
+Árbol de decisión,11,1,0,FN
+Árbol de decisión,484,1,0,FN
+Árbol de decisión,199,0,1,FP
+Árbol de decisión,142,1,0,FN
+Árbol de decisión,295,0,1,FP
+SVM,553,1,0,FN
+SVM,27,0,1,FP
+SVM,279,1,0,FN
+SVM,712,1,0,FN
+SVM,455,1,0,FN
+SVM,65,1,0,FN
+SVM,489,1,0,FN
+SVM,297,0,1,FP
+SVM,564,0,1,FP
+SVM,502,0,1,FP
+SVM,17,1,0,FN
+SVM,701,1,0,FN
+SVM,447,1,0,FN
+SVM,578,0,1,FP
+SVM,690,1,0,FN
+SVM,593,0,1,FP
+SVM,501,0,1,FP
+SVM,55,1,0,FN
+SVM,570,1,0,FN
+SVM,271,1,0,FN
+SVM,23,1,0,FN
+SVM,146,1,0,FN
+SVM,607,1,0,FN
+SVM,444,1,0,FN
+SVM,587,1,0,FN
+SVM,804,1,0,FN
+SVM,685,0,1,FP
+SVM,484,1,0,FN
+SVM,293,0,1,FP
+SVM,199,0,1,FP
+Naive Bayes,553,1,0,FN
+Naive Bayes,698,0,1,FP
+Naive Bayes,27,0,1,FP
+Naive Bayes,712,1,0,FN
+Naive Bayes,455,1,0,FN
+Naive Bayes,65,1,0,FN
+Naive Bayes,489,1,0,FN
+Naive Bayes,869,1,0,FN
+Naive Bayes,165,1,0,FN
+Naive Bayes,745,0,1,FP
+Naive Bayes,297,0,1,FP
+Naive Bayes,40,0,1,FP
+Naive Bayes,564,0,1,FP
+Naive Bayes,502,0,1,FP
+Naive Bayes,17,1,0,FN
+Naive Bayes,701,1,0,FN
+Naive Bayes,447,1,0,FN
+Naive Bayes,578,0,1,FP
+Naive Bayes,690,1,0,FN
+Naive Bayes,593,0,1,FP
+Naive Bayes,501,0,1,FP
+Naive Bayes,452,0,1,FP
+Naive Bayes,55,1,0,FN
+Naive Bayes,570,1,0,FN
+Naive Bayes,62,0,1,FP
+Naive Bayes,271,1,0,FN
+Naive Bayes,23,1,0,FN
+Naive Bayes,245,0,1,FP
+Naive Bayes,146,1,0,FN
+Naive Bayes,659,0,1,FP
+Naive Bayes,726,1,0,FN
+Naive Bayes,799,0,1,FP
+Naive Bayes,607,1,0,FN
+Naive Bayes,549,1,0,FN
+Naive Bayes,444,1,0,FN
+Naive Bayes,804,1,0,FN
+Naive Bayes,293,0,1,FP
+Naive Bayes,199,0,1,FP
+Naive Bayes,295,0,1,FP
+MLP 1 capa oculta,553,1,0,FN
+MLP 1 capa oculta,241,1,0,FN
+MLP 1 capa oculta,559,1,0,FN
+MLP 1 capa oculta,698,0,1,FP
+MLP 1 capa oculta,216,1,0,FN
+MLP 1 capa oculta,27,0,1,FP
+MLP 1 capa oculta,279,1,0,FN
+MLP 1 capa oculta,455,1,0,FN
+MLP 1 capa oculta,65,1,0,FN
+MLP 1 capa oculta,489,1,0,FN
+MLP 1 capa oculta,869,1,0,FN
+MLP 1 capa oculta,165,1,0,FN
+MLP 1 capa oculta,297,0,1,FP
+MLP 1 capa oculta,502,0,1,FP
+MLP 1 capa oculta,17,1,0,FN
+MLP 1 capa oculta,701,1,0,FN
+MLP 1 capa oculta,106,1,0,FN
+MLP 1 capa oculta,501,0,1,FP
+MLP 1 capa oculta,92,0,1,FP
+MLP 1 capa oculta,431,1,0,FN
+MLP 1 capa oculta,351,0,1,FP
+MLP 1 capa oculta,570,1,0,FN
+MLP 1 capa oculta,62,0,1,FP
+MLP 1 capa oculta,458,1,0,FN
+MLP 1 capa oculta,271,1,0,FN
+MLP 1 capa oculta,245,0,1,FP
+MLP 1 capa oculta,146,1,0,FN
+MLP 1 capa oculta,726,1,0,FN
+MLP 1 capa oculta,336,0,1,FP
+MLP 1 capa oculta,186,1,0,FN
+MLP 1 capa oculta,444,1,0,FN
+MLP 1 capa oculta,671,0,1,FP
+MLP 1 capa oculta,137,0,1,FP
+MLP 1 capa oculta,587,1,0,FN
+MLP 1 capa oculta,804,1,0,FN
+MLP 1 capa oculta,39,1,0,FN
+MLP 1 capa oculta,823,1,0,FN
+MLP 1 capa oculta,199,0,1,FP
+MLP 1 capa oculta,142,1,0,FN
+MLP 1 capa oculta,295,0,1,FP
+MLP 2 capas ocultas,553,1,0,FN
+MLP 2 capas ocultas,559,1,0,FN
+MLP 2 capas ocultas,27,0,1,FP
+MLP 2 capas ocultas,279,1,0,FN
+MLP 2 capas ocultas,455,1,0,FN
+MLP 2 capas ocultas,65,1,0,FN
+MLP 2 capas ocultas,489,1,0,FN
+MLP 2 capas ocultas,869,1,0,FN
+MLP 2 capas ocultas,165,1,0,FN
+MLP 2 capas ocultas,745,0,1,FP
+MLP 2 capas ocultas,297,0,1,FP
+MLP 2 capas ocultas,564,0,1,FP
+MLP 2 capas ocultas,502,0,1,FP
+MLP 2 capas ocultas,17,1,0,FN
+MLP 2 capas ocultas,701,1,0,FN
+MLP 2 capas ocultas,447,1,0,FN
+MLP 2 capas ocultas,578,0,1,FP
+MLP 2 capas ocultas,593,0,1,FP
+MLP 2 capas ocultas,501,0,1,FP
+MLP 2 capas ocultas,92,0,1,FP
+MLP 2 capas ocultas,431,1,0,FN
+MLP 2 capas ocultas,351,0,1,FP
+MLP 2 capas ocultas,570,1,0,FN
+MLP 2 capas ocultas,62,0,1,FP
+MLP 2 capas ocultas,271,1,0,FN
+MLP 2 capas ocultas,245,0,1,FP
+MLP 2 capas ocultas,146,1,0,FN
+MLP 2 capas ocultas,336,0,1,FP
+MLP 2 capas ocultas,444,1,0,FN
+MLP 2 capas ocultas,671,0,1,FP
+MLP 2 capas ocultas,137,0,1,FP
+MLP 2 capas ocultas,587,1,0,FN
+MLP 2 capas ocultas,804,1,0,FN
+MLP 2 capas ocultas,293,0,1,FP
+MLP 2 capas ocultas,199,0,1,FP
+MLP 2 capas ocultas,142,1,0,FN
+MLP 2 capas ocultas,295,0,1,FP
+MLP 3 capas ocultas,553,1,0,FN
+MLP 3 capas ocultas,559,1,0,FN
+MLP 3 capas ocultas,216,1,0,FN
+MLP 3 capas ocultas,27,0,1,FP
+MLP 3 capas ocultas,279,1,0,FN
+MLP 3 capas ocultas,712,1,0,FN
+MLP 3 capas ocultas,455,1,0,FN
+MLP 3 capas ocultas,65,1,0,FN
+MLP 3 capas ocultas,489,1,0,FN
+MLP 3 capas ocultas,869,1,0,FN
+MLP 3 capas ocultas,165,1,0,FN
+MLP 3 capas ocultas,297,0,1,FP
+MLP 3 capas ocultas,502,0,1,FP
+MLP 3 capas ocultas,17,1,0,FN
+MLP 3 capas ocultas,679,1,0,FN
+MLP 3 capas ocultas,701,1,0,FN
+MLP 3 capas ocultas,106,1,0,FN
+MLP 3 capas ocultas,447,1,0,FN
+MLP 3 capas ocultas,690,1,0,FN
+MLP 3 capas ocultas,501,0,1,FP
+MLP 3 capas ocultas,92,0,1,FP
+MLP 3 capas ocultas,431,1,0,FN
+MLP 3 capas ocultas,55,1,0,FN
+MLP 3 capas ocultas,570,1,0,FN
+MLP 3 capas ocultas,62,0,1,FP
+MLP 3 capas ocultas,271,1,0,FN
+MLP 3 capas ocultas,23,1,0,FN
+MLP 3 capas ocultas,245,0,1,FP
+MLP 3 capas ocultas,146,1,0,FN
+MLP 3 capas ocultas,336,0,1,FP
+MLP 3 capas ocultas,607,1,0,FN
+MLP 3 capas ocultas,549,1,0,FN
+MLP 3 capas ocultas,444,1,0,FN
+MLP 3 capas ocultas,587,1,0,FN
+MLP 3 capas ocultas,804,1,0,FN
+MLP 3 capas ocultas,823,1,0,FN
+MLP 3 capas ocultas,199,0,1,FP
+MLP 3 capas ocultas,142,1,0,FN

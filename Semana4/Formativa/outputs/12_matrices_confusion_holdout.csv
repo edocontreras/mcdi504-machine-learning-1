@@ -1,0 +1,29 @@
+Modelo,Clase_real,Clase_predicha,Frecuencia
+KNN,0,0,99
+KNN,0,1,11
+KNN,1,0,22
+KNN,1,1,47
+Árbol de decisión,0,0,97
+Árbol de decisión,0,1,13
+Árbol de decisión,1,0,29
+Árbol de decisión,1,1,40
+SVM,0,0,100
+SVM,0,1,10
+SVM,1,0,20
+SVM,1,1,49
+Naive Bayes,0,0,92
+Naive Bayes,0,1,18
+Naive Bayes,1,0,21
+Naive Bayes,1,1,48
+MLP 1 capa oculta,0,0,96
+MLP 1 capa oculta,0,1,14
+MLP 1 capa oculta,1,0,26
+MLP 1 capa oculta,1,1,43
+MLP 2 capas ocultas,0,0,92
+MLP 2 capas ocultas,0,1,18
+MLP 2 capas ocultas,1,0,19
+MLP 2 capas ocultas,1,1,50
+MLP 3 capas ocultas,0,0,101
+MLP 3 capas ocultas,0,1,9
+MLP 3 capas ocultas,1,0,29
+MLP 3 capas ocultas,1,1,40

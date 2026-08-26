@@ -1,0 +1,4 @@
+Tecnica,Numero_ajustes_MLP1,Costo_relativo,Uso,Tiempo_KFold_observado_segundos
+Hold-Out,1,Bajo,Evaluación puntual sobre conjunto de prueba,
+K-Fold estratificado k=5,5,Medio,Estimación de estabilidad sobre entrenamiento,0.8946509000379592
+Leave-One-Out,712,Alto,Referencia teórica de costo; no ejecutada,

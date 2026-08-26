@@ -1,0 +1,4 @@
+Modelo,Encontrado_en_Semana3,Arquitectura_esperada,Arquitectura_Semana3,Coincide_arquitectura
+MLP 1 capa oculta,True,"(100,)","(100,)",True
+MLP 2 capas ocultas,True,"(100, 50)","(100, 50)",True
+MLP 3 capas ocultas,True,"(100, 50, 25)","(100, 50, 25)",True

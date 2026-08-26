@@ -1,0 +1,20 @@
+{
+  "actividad": "Evaluación Formativa 4 · Fase 4",
+  "dataset": "Semana3/data/titanic.csv",
+  "target": "survived",
+  "positive_class": 1,
+  "random_state": 42,
+  "test_size": 0.2,
+  "cv": "StratifiedKFold",
+  "n_splits": 5,
+  "modelos": [
+    "KNN",
+    "Árbol de decisión",
+    "SVM",
+    "Naive Bayes",
+    "MLP 1 capa oculta",
+    "MLP 2 capas ocultas",
+    "MLP 3 capas ocultas"
+  ],
+  "timestamp_local": "2026-08-26T00:55:17.677839"
+}

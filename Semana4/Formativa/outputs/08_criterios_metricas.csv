@@ -1,0 +1,7 @@
+Metrica,Interpretacion
+Accuracy,Proporción global de clasificaciones correctas.
+Precision,"Entre las predicciones de supervivencia, proporción que realmente sobrevivió."
+Recall,"Entre los sobrevivientes reales, proporción detectada por el modelo."
+F1-score,Media armónica entre precision y recall para la clase positiva.
+ROC-AUC,Capacidad de ordenamiento entre clases a través de todos los umbrales.
+Average Precision,Resumen de la curva precision-recall para la clase positiva.

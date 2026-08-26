@@ -1,0 +1,7 @@
+Elemento,Valor
+Observaciones,891
+Columnas_originales,15
+Predictores_seleccionados,7
+Variable_objetivo,survived
+Clase_positiva,1 = sobrevivió
+SHA256_dataset,81787d320d7f7b03df935e91de8bd19e11d45c5bbcab86ef4d4a76dc91b7d4f2
