@@ -12,9 +12,9 @@
 
 ## 1. Descripción del repositorio
 
-Este repositorio reúne el desarrollo progresivo del proyecto ABP de **Machine Learning I** durante las **Semanas 1, 2 y 3**.
+Este repositorio reúne el desarrollo progresivo del proyecto ABP de **Machine Learning I** durante las **Semanas 1, 2, 3 y 4**.
 
-La organización conserva cada fase como una unidad trazable e independiente, con su notebook ejecutado, evidencia tabular, visualizaciones, documentación técnica e informe correspondiente.
+La organización conserva cada fase como una unidad trazable e independiente. Las cuatro semanas mantienen notebook, evidencia tabular, visualizaciones, documentación técnica e informe cuando corresponde. Semana 4 se encuentra archivada con notebook ejecutado, resultados de la corrida final, ocho figuras, documentación de auditoría y el informe institucional final en DOCX/PDF.
 
 La progresión general del proyecto es:
 
@@ -30,9 +30,13 @@ Regresión supervisada · California Housing
 Semana 3
 Evaluación Sumativa 2 · Integración Fases 2 y 3
 Regresión supervisada + clasificación mediante redes neuronales
+        ↓
+Semana 4
+Evaluación Sumativa 3 · Fase 4
+Evaluación y validación del modelo de clasificación seleccionado
 ```
 
-Las carpetas `Semana1/` y `Semana2/` se mantienen como **evidencia histórica de las fases ya desarrolladas**. `Semana3/` consolida la evaluación integrada de los resultados de aprendizaje **RA2 y RA3**.
+Las carpetas `Semana1/` y `Semana2/` se mantienen como **evidencia histórica de las fases ya desarrolladas**. `Semana3/` consolida la evaluación integrada de los resultados de aprendizaje **RA2 y RA3**. `Semana4/` desarrolla la evaluación y validación del modelo de clasificación seleccionado, correspondiente al **RA4**.
 
 ---
 
@@ -62,6 +66,14 @@ mcdi504-machine-learning-1/
 │   ├── notebook/
 │   ├── outputs/
 │   └── README.md
+├── Semana4/
+│   ├── data/
+│   ├── docs/
+│   ├── figures/
+│   ├── informe/
+│   ├── notebook/
+│   ├── outputs/
+│   └── README.md
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -73,7 +85,7 @@ Cada semana mantiene la misma lógica de trazabilidad:
 ```text
 datos
   ↓
-notebook ejecutado
+notebook reproducible
   ↓
 outputs tabulados
   ↓
@@ -652,19 +664,118 @@ El notebook genera automáticamente tablas, figuras, controles de consistencia y
 
 ---
 
-# 11. Resumen de la evolución del proyecto
+# 11. Semana 4 · Evaluación Sumativa 3: Fase 4 · Evaluación y validación del modelo
+
+## 11.1 Propósito
+
+La cuarta semana evalúa y valida el modelo de clasificación seleccionado en Semana 3. El flujo mantiene la continuidad del caso Titanic, reproduce la partición histórica del proyecto y estima la estabilidad del modelo mediante validación cruzada estratificada.
+
+## 11.2 Modelo y datos
+
+- Dataset: `Semana3/data/titanic.csv`.
+- Variable objetivo: `survived`.
+- Clase positiva: `1` (`sobrevivió`).
+- Modelo: `MLPClassifier(hidden_layer_sizes=(100, 50))`.
+- Partición histórica: 80% entrenamiento / 20% prueba, estratificada, `random_state=42`.
+- Validación de estabilidad: `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` aplicada únicamente al conjunto de entrenamiento.
+
+## 11.3 Evaluación y validación
+
+La corrida final genera y archiva:
+
+- matriz de confusión sobre el Hold-Out histórico;
+- accuracy, precision, recall y F1-score;
+- balanced accuracy y especificidad;
+- ROC-AUC y curva ROC;
+- curva Precision-Recall y average precision;
+- métricas por fold y resumen de estabilidad;
+- predicciones out-of-fold;
+- comparación entre Hold-Out histórico y K-Fold;
+- control del umbral de clasificación;
+- costo computacional observado de K-Fold y referencia teórica de LOOCV;
+- verificaciones de continuidad con Semana 3;
+- manifiesto SHA-256 y control automático de artefactos.
+
+### Resultados Hold-Out históricos
+
+| Métrica | Valor |
+|---|---:|
+| Accuracy | 0.793296 |
+| Precision | 0.735294 |
+| Recall | 0.724638 |
+| F1-score | 0.729927 |
+| Balanced accuracy | 0.780501 |
+| Especificidad | 0.836364 |
+| ROC-AUC | 0.852174 |
+| Average precision | 0.789082 |
+
+Matriz: TN=92, FP=18, FN=19, TP=50.
+
+### Estabilidad mediante K-Fold estratificado
+
+| Métrica | Promedio | Desv. estándar muestral |
+|---|---:|---:|
+| Accuracy | 0.825845 | 0.013486 |
+| Precision | 0.834689 | 0.041732 |
+| Recall | 0.684983 | 0.061566 |
+| F1-score | 0.749988 | 0.028931 |
+| ROC-AUC | 0.862269 | 0.019814 |
+
+Accuracy presenta baja variabilidad entre folds; recall es más sensible a la composición de las particiones. La interpretación mantiene esta diferencia y no describe la estabilidad como uniforme para todas las métricas.
+
+El preprocesamiento forma parte del `Pipeline`, por lo que imputación, codificación y escalamiento se ajustan dentro de cada fold de entrenamiento.
+
+### Consideración metodológica
+
+La partición Hold-Out de 179 observaciones ya participó en la comparación de arquitecturas de Semana 3. En Semana 4 se utiliza como evidencia histórica y de continuidad, no como un test virgen posterior a la selección. La evidencia nueva de estabilidad se obtiene mediante `StratifiedKFold(k=5)` exclusivamente sobre train. El umbral 0.50 no se optimiza con test.
+
+## 11.4 Estado técnico final
+
+```text
+Notebook: Semana4/notebook/F4_Evaluacion.ipynb
+Celdas de código: 9
+Celdas ejecutadas: 9/9
+Errores almacenados: 0
+Advertencias de convergencia: 0
+Figuras: 8
+Artefactos requeridos: 50/50
+Control final: consistencia OK / continuidad OK / artefactos OK
+Informe: DOCX + PDF institucional, 23 páginas
+```
+
+## 11.5 Evidencia principal
+
+- [README Semana 4](Semana4/README.md)
+- [Notebook F4_Evaluacion.ipynb](Semana4/notebook/F4_Evaluacion.ipynb)
+- [Informe final PDF](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf)
+- [Informe final DOCX](Semana4/informe/MCDI504_S4_2_GRUPO6.docx)
+- [Decisiones metodológicas](Semana4/docs/DECISIONES_METODOLOGICAS.md)
+- [Resultados y decisiones](Semana4/docs/RESULTADOS_Y_DECISIONES.md)
+- [Trazabilidad de la rúbrica](Semana4/docs/TRAZABILIDAD_RUBRICA.md)
+- [Auditoría final](Semana4/docs/AUDITORIA_FINAL.md)
+- [Fuentes base](Semana4/docs/FUENTES_BASE.md)
+- [Guía de ejecución](Semana4/docs/GUIA_EJECUCION.md)
+- [Manifiesto final](Semana4/docs/MANIFIESTO_REPOSITORIO_FINAL.csv)
+- [Datos](Semana4/data/)
+- [Outputs](Semana4/outputs/)
+- [Figuras](Semana4/figures/)
+
+---
+
+# 12. Resumen de la evolución del proyecto
 
 | Semana | Fase | Dataset | Problema | Evidencia principal |
 |---|---|---|---|---|
 | 1 | Definición y orientación | Iris | Clasificación multiclase · formulación y EDA | KDD, calidad, correlaciones, normalización |
 | 2 | Búsqueda y recopilación | California Housing | Regresión supervisada | Lineal, árbol, MLP, MSE/RMSE/R² |
 | 3 | Evaluación Sumativa 2 | California Housing + Titanic | Regresión + clasificación | Tuning, 3 MLP, matrices, comparación y selección |
+| 4 | Evaluación Sumativa 3 | Titanic | Evaluación y validación de clasificación | Métricas, curvas, K-Fold, estabilidad y trazabilidad |
 
 ---
 
-# 12. Reproducibilidad
+# 13. Reproducibilidad
 
-## 12.1 Dependencias
+## 13.1 Dependencias
 
 Desde la raíz del repositorio:
 
@@ -685,18 +796,19 @@ notebook>=7,<8
 ipykernel>=6,<8
 ```
 
-## 12.2 Inicio de Jupyter
+## 13.2 Inicio de Jupyter
 
 ```bash
 jupyter notebook
 ```
 
-## 12.3 Notebooks principales
+## 13.3 Notebooks principales
 
 ```text
 Semana1/notebook/F1_Definicion.ipynb
 Semana2/notebook/F2_Regresion.ipynb
 Semana3/notebook/F3_RedesNeuronales.ipynb
+Semana4/notebook/F4_Evaluacion.ipynb
 ```
 
 Para reproducir una corrida:
@@ -712,17 +824,18 @@ Para reproducir una corrida:
 - **Semana 1:** `load_iris()` está incluido en scikit-learn; además se conserva `iris_original.csv`.
 - **Semana 2:** `fetch_california_housing()` puede requerir acceso a Internet en una primera ejecución si el dataset no está en caché.
 - **Semana 3:** California Housing y Titanic están almacenados localmente dentro de `Semana3/data/`.
+- **Semana 4:** reutiliza la copia local de Titanic de Semana 3 y genera una copia verificable en `Semana4/data/` durante la ejecución.
 
 ---
 
-# 13. Convenciones metodológicas transversales
+# 14. Convenciones metodológicas transversales
 
 A lo largo del proyecto se mantienen los siguientes principios:
 
 - separación entre variable objetivo y predictores;
 - documentación explícita de decisiones técnicas;
 - control de valores faltantes y consistencia de datos;
-- preservación del conjunto de prueba para evaluación;
+- separación explícita entre entrenamiento y prueba; las transformaciones aprendidas se ajustan con entrenamiento y, cuando una partición de prueba ya intervino en selección previa, su condición histórica se declara de forma explícita;
 - ajuste de transformaciones utilizando únicamente entrenamiento cuando corresponde;
 - uso de `random_state=42` para reproducibilidad;
 - métricas coherentes con el tipo de problema;
@@ -733,17 +846,18 @@ A lo largo del proyecto se mantienen los siguientes principios:
 
 ---
 
-# 14. Informes
+# 15. Informes
 
 | Semana | Informe |
 |---|---|
 | Semana 1 | [`MCDI504_S1_1_GRUPO6.pdf`](Semana1/informe/MCDI504_S1_1_GRUPO6.pdf) |
 | Semana 2 | [`MCDI504_S2_1_GRUPO6.pdf`](Semana2/informe/MCDI504_S2_1_GRUPO6.pdf) |
 | Semana 3 | [`f3_s03_grupo6.pdf`](Semana3/informe/f3_s03_grupo6.pdf) |
+| Semana 4 | [`MCDI504_S4_2_GRUPO6.pdf`](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf) |
 
 ---
 
-# 15. Licencia
+# 16. Licencia
 
 Este repositorio utiliza la **MIT License**.
 
