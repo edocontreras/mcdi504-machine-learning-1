@@ -1,6 +1,6 @@
 # Datos de Semana 4
 
-La corrida utiliza `titanic.csv`, copia verificable de `Semana3/data/titanic.csv`. El notebook comprueba la identidad binaria mediante SHA-256 antes de continuar.
+La corrida utiliza `titanic.csv`, copia verificable de `Semana3/data/titanic.csv`. 
 
 - Registros: 891.
 - Variable objetivo: `survived`.
