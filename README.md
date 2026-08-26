@@ -14,7 +14,12 @@
 
 Este repositorio reúne el desarrollo progresivo del proyecto ABP de **Machine Learning I** durante las **Semanas 1, 2, 3 y 4**.
 
-La organización conserva cada fase como una unidad trazable e independiente. Las cuatro semanas mantienen notebook, evidencia tabular, visualizaciones, documentación técnica e informe cuando corresponde. Semana 4 se encuentra archivada con notebook ejecutado, resultados de la corrida final, ocho figuras, documentación de auditoría y el informe institucional final en DOCX/PDF.
+La organización conserva cada fase como una unidad trazable e independiente. Las semanas mantienen notebooks, evidencia tabular, visualizaciones, documentación técnica e informes cuando corresponde.
+
+La Semana 4 contiene dos evaluaciones complementarias:
+
+- **Evaluación Formativa 4 · Avance de la Fase 4 (`S4_1`)**: evaluación comparativa de modelos supervisados y validación cruzada de una red neuronal con una capa oculta.
+- **Evaluación Sumativa 3 · Cierre de la Fase 4 (`S4_2`)**: evaluación y validación final del modelo MLP de dos capas ocultas seleccionado al cierre de Semana 3.
 
 La progresión general del proyecto es:
 
@@ -32,11 +37,16 @@ Evaluación Sumativa 2 · Integración Fases 2 y 3
 Regresión supervisada + clasificación mediante redes neuronales
         ↓
 Semana 4
-Evaluación Sumativa 3 · Fase 4
-Evaluación y validación del modelo de clasificación seleccionado
+Fase 4 · Evaluación y validación del modelo
+├── Evaluación Formativa 4 · S4_1
+└── Evaluación Sumativa 3 · S4_2
 ```
 
-Las carpetas `Semana1/` y `Semana2/` se mantienen como **evidencia histórica de las fases ya desarrolladas**. `Semana3/` consolida la evaluación integrada de los resultados de aprendizaje **RA2 y RA3**. `Semana4/` desarrolla la evaluación y validación del modelo de clasificación seleccionado, correspondiente al **RA4**.
+Las carpetas `Semana1/` y `Semana2/` se mantienen como **evidencia histórica de las fases desarrolladas**.
+
+`Semana3/` consolida la evaluación integrada de los resultados de aprendizaje **RA2 y RA3**.
+
+`Semana4/` desarrolla el **RA4**, incorporando una evaluación formativa comparativa y una evaluación sumativa final, con trazabilidad independiente para ambos entregables.
 
 ---
 
@@ -51,6 +61,7 @@ mcdi504-machine-learning-1/
 │   ├── informe/
 │   ├── notebook/
 │   └── outputs/
+│
 ├── Semana2/
 │   ├── data/
 │   ├── docs/
@@ -58,6 +69,7 @@ mcdi504-machine-learning-1/
 │   ├── informe/
 │   ├── notebook/
 │   └── outputs/
+│
 ├── Semana3/
 │   ├── data/
 │   ├── docs/
@@ -66,7 +78,17 @@ mcdi504-machine-learning-1/
 │   ├── notebook/
 │   ├── outputs/
 │   └── README.md
+│
 ├── Semana4/
+│   ├── Formativa/
+│   │   ├── data/
+│   │   ├── docs/
+│   │   ├── figures/
+│   │   ├── informe/
+│   │   ├── notebook/
+│   │   ├── outputs/
+│   │   └── README.md
+│   │
 │   ├── data/
 │   ├── docs/
 │   ├── figures/
@@ -74,13 +96,14 @@ mcdi504-machine-learning-1/
 │   ├── notebook/
 │   ├── outputs/
 │   └── README.md
+│
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 └── requirements.txt
 ```
 
-Cada semana mantiene la misma lógica de trazabilidad:
+Cada fase mantiene la misma lógica general de trazabilidad:
 
 ```text
 datos
@@ -95,6 +118,8 @@ decisiones técnicas
   ↓
 informe
 ```
+
+En Semana 4 esta lógica se conserva de manera independiente para la Evaluación Formativa y la Evaluación Sumativa.
 
 ---
 
@@ -664,13 +689,211 @@ El notebook genera automáticamente tablas, figuras, controles de consistencia y
 
 ---
 
-# 11. Semana 4 · Evaluación Sumativa 3: Fase 4 · Evaluación y validación del modelo
+# 11. Semana 4 · Fase 4: Evaluación y validación del modelo
 
-## 11.1 Propósito
+Semana 4 desarrolla el resultado de aprendizaje asociado a la **evaluación, comparación y validación de modelos supervisados**.
 
-La cuarta semana evalúa y valida el modelo de clasificación seleccionado en Semana 3. El flujo mantiene la continuidad del caso Titanic, reproduce la partición histórica del proyecto y estima la estabilidad del modelo mediante validación cruzada estratificada.
+La evidencia se divide en dos entregables:
 
-## 11.2 Modelo y datos
+```text
+Semana4/
+├── Formativa/   → Evaluación Formativa 4 · S4_1
+└── resto        → Evaluación Sumativa 3 · S4_2
+```
+
+---
+
+## 11.1 Evaluación Formativa 4 · Avance de la Fase 4
+
+### Propósito
+
+La Evaluación Formativa 4 evalúa comparativamente los modelos supervisados desarrollados durante el proyecto y aplica validación cruzada específicamente a una red neuronal con **una capa oculta**.
+
+El análisis incorpora:
+
+- evaluación mediante Hold-Out;
+- matrices de confusión;
+- accuracy;
+- precision;
+- recall;
+- F1-score;
+- ROC-AUC;
+- Average Precision;
+- análisis comparativo entre modelos;
+- validación cruzada estratificada;
+- resultados por fold;
+- estabilidad de métricas;
+- comparación entre Hold-Out y K-Fold;
+- análisis de costo computacional;
+- controles OOF y de integridad.
+
+### Dataset
+
+- Dataset: Titanic.
+- Observaciones: **891**.
+- Variable objetivo: `survived`.
+- Clase positiva: `1` (`sobrevivió`).
+- Entrenamiento: **712 observaciones**.
+- Prueba: **179 observaciones**.
+
+Predictores:
+
+```text
+pclass
+age
+sibsp
+parch
+fare
+sex
+embarked
+```
+
+La copia canónica de los datos se conserva en:
+
+```text
+Semana3/data/titanic.csv
+```
+
+### Modelos comparados
+
+La evaluación Hold-Out considera siete modelos:
+
+1. K-Nearest Neighbors.
+2. Árbol de decisión.
+3. Support Vector Machine con kernel RBF.
+4. Gaussian Naive Bayes.
+5. MLP con una capa oculta `(100,)`.
+6. MLP con dos capas ocultas `(100, 50)`.
+7. MLP con tres capas ocultas `(100, 50, 25)`.
+
+### Resultados Hold-Out
+
+| Modelo | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| KNN | 0.8156 | 0.8103 | 0.6812 | 0.7402 | 0.8353 |
+| Árbol de decisión | 0.7654 | 0.7547 | 0.5797 | 0.6557 | 0.7971 |
+| **SVM** | **0.8324** | **0.8305** | 0.7101 | **0.7656** | 0.8337 |
+| Naive Bayes | 0.7821 | 0.7273 | 0.6957 | 0.7111 | 0.8080 |
+| MLP 1 capa | 0.7765 | 0.7544 | 0.6232 | 0.6825 | 0.8360 |
+| MLP 2 capas | 0.7933 | 0.7353 | **0.7246** | 0.7299 | **0.8522** |
+| MLP 3 capas | 0.7877 | 0.8163 | 0.5797 | 0.6780 | 0.8370 |
+
+La comparación muestra que SVM obtiene la mayor accuracy y el mayor F1-score en Hold-Out, mientras que el MLP de dos capas obtiene el mayor recall y ROC-AUC.
+
+Por tanto, la comparación no se reduce a una única métrica.
+
+### Validación cruzada del MLP de una capa
+
+El modelo sometido a validación cruzada es:
+
+```python
+MLPClassifier(hidden_layer_sizes=(100,))
+```
+
+La técnica utilizada es:
+
+```python
+StratifiedKFold(
+    n_splits=5,
+    shuffle=True,
+    random_state=42
+)
+```
+
+La validación se ejecuta exclusivamente sobre entrenamiento.
+
+### Resultados por fold
+
+| Fold | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 0.8042 | 0.7647 | 0.7091 | 0.7358 | 0.8658 |
+| 2 | 0.7972 | 0.7955 | 0.6364 | 0.7071 | 0.8292 |
+| 3 | 0.8310 | 0.8780 | 0.6545 | 0.7500 | 0.8730 |
+| 4 | 0.7887 | 0.7222 | 0.7222 | 0.7222 | 0.8480 |
+| 5 | 0.8169 | 0.8500 | 0.6296 | 0.7234 | 0.8693 |
+
+### Estabilidad
+
+| Métrica | Promedio CV | Desv. estándar muestral |
+|---|---:|---:|
+| Accuracy | **0.8076** | **0.0167** |
+| Precision | 0.8021 | 0.0630 |
+| Recall | 0.6704 | 0.0426 |
+| F1-score | **0.7277** | **0.0161** |
+| Balanced accuracy | 0.7817 | 0.0118 |
+| ROC-AUC | **0.8571** | **0.0183** |
+| Average precision | 0.8237 | 0.0191 |
+
+Accuracy, F1-score y ROC-AUC presentan baja dispersión relativa. Precision y recall muestran mayor sensibilidad a la composición de los folds.
+
+### Matriz OOF agregada
+
+```text
+TN = 392
+FP = 47
+FN = 90
+TP = 183
+```
+
+La suma de la matriz es:
+
+```text
+392 + 47 + 90 + 183 = 712
+```
+
+correspondiente exactamente al conjunto de entrenamiento.
+
+### Justificación de validación
+
+| Técnica | Ajustes aproximados | Costo relativo |
+|---|---:|---|
+| Hold-Out | 1 | Bajo |
+| Stratified K-Fold k=5 | 5 | Medio |
+| Leave-One-Out | 712 | Alto |
+
+Para un conjunto de entrenamiento de 712 observaciones, K-Fold con cinco particiones ofrece un compromiso entre costo computacional y capacidad de observar variabilidad entre particiones.
+
+### Estado técnico
+
+```text
+Notebook: Semana4/Formativa/notebook/F4_Evaluacion.ipynb
+Celdas de código: 7
+Celdas ejecutadas: 7/7
+Errores almacenados: 0
+Advertencias del MLP Hold-Out: 0
+Advertencias del MLP K-Fold: 0
+Artefactos requeridos: 47/47
+Control final: consistencia OK / validación MLP 1 capa OK / artefactos OK
+Figuras generadas: 18
+```
+
+### Evidencia principal de la Formativa
+
+- [README Formativa](Semana4/Formativa/README.md)
+- [Notebook F4_Evaluacion.ipynb](Semana4/Formativa/notebook/F4_Evaluacion.ipynb)
+- [Informe final PDF · S4_1](Semana4/Formativa/informe/MCDI504_S4_1_GRUPO6.pdf)
+- [Informe final DOCX · S4_1](Semana4/Formativa/informe/MCDI504_S4_1_GRUPO6.docx)
+- [Auditoría final](Semana4/Formativa/docs/AUDITORIA_FINAL.md)
+- [Decisiones metodológicas](Semana4/Formativa/docs/DECISIONES_METODOLOGICAS.md)
+- [Resultados y decisiones](Semana4/Formativa/docs/RESULTADOS_Y_DECISIONES.md)
+- [Trazabilidad de la rúbrica](Semana4/Formativa/docs/TRAZABILIDAD_RUBRICA.md)
+- [Fuentes base](Semana4/Formativa/docs/FUENTES_BASE.md)
+- [Guía de ejecución](Semana4/Formativa/docs/GUIA_EJECUCION.md)
+- [Manifiesto Formativa](Semana4/Formativa/docs/MANIFIESTO_FORMATIVA_FINAL.csv)
+- [Outputs](Semana4/Formativa/outputs/)
+- [Figuras](Semana4/Formativa/figures/)
+
+---
+
+## 11.2 Evaluación Sumativa 3 · Cierre de la Fase 4
+
+### Propósito
+
+La Evaluación Sumativa 3 evalúa y valida el modelo de clasificación seleccionado en Semana 3.
+
+El flujo mantiene continuidad con el caso Titanic, reproduce la partición histórica del proyecto y estima la estabilidad del modelo mediante validación cruzada estratificada.
+
+### Modelo y datos
 
 - Dataset: `Semana3/data/titanic.csv`.
 - Variable objetivo: `survived`.
@@ -679,22 +902,23 @@ La cuarta semana evalúa y valida el modelo de clasificación seleccionado en Se
 - Partición histórica: 80% entrenamiento / 20% prueba, estratificada, `random_state=42`.
 - Validación de estabilidad: `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` aplicada únicamente al conjunto de entrenamiento.
 
-## 11.3 Evaluación y validación
+### Evaluación y validación
 
 La corrida final genera y archiva:
 
-- matriz de confusión sobre el Hold-Out histórico;
+- matriz de confusión sobre Hold-Out histórico;
 - accuracy, precision, recall y F1-score;
 - balanced accuracy y especificidad;
 - ROC-AUC y curva ROC;
-- curva Precision-Recall y average precision;
-- métricas por fold y resumen de estabilidad;
+- curva Precision-Recall y Average Precision;
+- métricas por fold;
+- resumen de estabilidad;
 - predicciones out-of-fold;
-- comparación entre Hold-Out histórico y K-Fold;
-- control del umbral de clasificación;
-- costo computacional observado de K-Fold y referencia teórica de LOOCV;
+- comparación Hold-Out vs K-Fold;
+- control del umbral;
+- costo computacional;
 - verificaciones de continuidad con Semana 3;
-- manifiesto SHA-256 y control automático de artefactos.
+- manifiestos y controles automáticos de artefactos.
 
 ### Resultados Hold-Out históricos
 
@@ -709,7 +933,14 @@ La corrida final genera y archiva:
 | ROC-AUC | 0.852174 |
 | Average precision | 0.789082 |
 
-Matriz: TN=92, FP=18, FN=19, TP=50.
+Matriz de confusión:
+
+```text
+TN = 92
+FP = 18
+FN = 19
+TP = 50
+```
 
 ### Estabilidad mediante K-Fold estratificado
 
@@ -721,15 +952,33 @@ Matriz: TN=92, FP=18, FN=19, TP=50.
 | F1-score | 0.749988 | 0.028931 |
 | ROC-AUC | 0.862269 | 0.019814 |
 
-Accuracy presenta baja variabilidad entre folds; recall es más sensible a la composición de las particiones. La interpretación mantiene esta diferencia y no describe la estabilidad como uniforme para todas las métricas.
+Accuracy presenta baja variabilidad entre folds; recall es más sensible a la composición de las particiones.
 
 El preprocesamiento forma parte del `Pipeline`, por lo que imputación, codificación y escalamiento se ajustan dentro de cada fold de entrenamiento.
 
 ### Consideración metodológica
 
-La partición Hold-Out de 179 observaciones ya participó en la comparación de arquitecturas de Semana 3. En Semana 4 se utiliza como evidencia histórica y de continuidad, no como un test virgen posterior a la selección. La evidencia nueva de estabilidad se obtiene mediante `StratifiedKFold(k=5)` exclusivamente sobre train. El umbral 0.50 no se optimiza con test.
+La partición Hold-Out de 179 observaciones ya participó en la comparación de arquitecturas de Semana 3.
 
-## 11.4 Estado técnico final
+En Semana 4 se utiliza como:
+
+- evidencia histórica;
+- referencia de continuidad;
+- control de consistencia.
+
+No se presenta como un test completamente virgen posterior a la selección.
+
+La evidencia nueva de estabilidad se obtiene mediante `StratifiedKFold(k=5)` exclusivamente sobre entrenamiento.
+
+El umbral:
+
+```text
+0.50
+```
+
+se mantiene por continuidad y no se optimiza utilizando el conjunto test.
+
+### Estado técnico final
 
 ```text
 Notebook: Semana4/notebook/F4_Evaluacion.ipynb
@@ -740,42 +989,61 @@ Advertencias de convergencia: 0
 Figuras: 8
 Artefactos requeridos: 50/50
 Control final: consistencia OK / continuidad OK / artefactos OK
-Informe: DOCX + PDF institucional, 23 páginas
+Informe: DOCX + PDF institucional
 ```
 
-## 11.5 Evidencia principal
+### Evidencia principal de la Sumativa
 
 - [README Semana 4](Semana4/README.md)
 - [Notebook F4_Evaluacion.ipynb](Semana4/notebook/F4_Evaluacion.ipynb)
-- [Informe final PDF](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf)
-- [Informe final DOCX](Semana4/informe/MCDI504_S4_2_GRUPO6.docx)
+- [Informe final PDF · S4_2](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf)
+- [Informe final DOCX · S4_2](Semana4/informe/MCDI504_S4_2_GRUPO6.docx)
 - [Decisiones metodológicas](Semana4/docs/DECISIONES_METODOLOGICAS.md)
 - [Resultados y decisiones](Semana4/docs/RESULTADOS_Y_DECISIONES.md)
 - [Trazabilidad de la rúbrica](Semana4/docs/TRAZABILIDAD_RUBRICA.md)
 - [Auditoría final](Semana4/docs/AUDITORIA_FINAL.md)
 - [Fuentes base](Semana4/docs/FUENTES_BASE.md)
 - [Guía de ejecución](Semana4/docs/GUIA_EJECUCION.md)
-- [Manifiesto final](Semana4/docs/MANIFIESTO_REPOSITORIO_FINAL.csv)
+- [Manifiesto general](Semana4/docs/MANIFIESTO_REPOSITORIO_FINAL.csv)
 - [Datos](Semana4/data/)
 - [Outputs](Semana4/outputs/)
 - [Figuras](Semana4/figures/)
 
 ---
 
-# 12. Resumen de la evolución del proyecto
+# 12. Relación entre la Formativa y la Sumativa de Semana 4
 
-| Semana | Fase | Dataset | Problema | Evidencia principal |
+| Aspecto | Formativa 4 · S4_1 | Sumativa 3 · S4_2 |
+|---|---|---|
+| Propósito | Comparación preliminar y validación | Evaluación final del modelo seleccionado |
+| Modelos Hold-Out | 7 modelos | MLP de 2 capas |
+| Modelo sometido a CV | MLP de 1 capa | MLP de 2 capas |
+| Técnica CV | Stratified K-Fold k=5 | Stratified K-Fold k=5 |
+| Enfoque | Comparación y estabilidad | Validación final y trazabilidad |
+| Informe | `MCDI504_S4_1_GRUPO6.pdf` | `MCDI504_S4_2_GRUPO6.pdf` |
+| Ubicación | `Semana4/Formativa/` | `Semana4/` |
+
+La Evaluación Formativa permite observar comparativamente distintos modelos y estudiar la estabilidad de una red con una capa oculta.
+
+La Evaluación Sumativa profundiza la evaluación del MLP de dos capas seleccionado previamente y consolida la evidencia final de la Fase 4.
+
+---
+
+# 13. Resumen de la evolución del proyecto
+
+| Semana | Fase / evaluación | Dataset | Problema | Evidencia principal |
 |---|---|---|---|---|
 | 1 | Definición y orientación | Iris | Clasificación multiclase · formulación y EDA | KDD, calidad, correlaciones, normalización |
 | 2 | Búsqueda y recopilación | California Housing | Regresión supervisada | Lineal, árbol, MLP, MSE/RMSE/R² |
 | 3 | Evaluación Sumativa 2 | California Housing + Titanic | Regresión + clasificación | Tuning, 3 MLP, matrices, comparación y selección |
-| 4 | Evaluación Sumativa 3 | Titanic | Evaluación y validación de clasificación | Métricas, curvas, K-Fold, estabilidad y trazabilidad |
+| 4 · Formativa | Evaluación Formativa 4 · S4_1 | Titanic | Comparación de clasificación + CV | 7 modelos, matrices, métricas, CV MLP 1 capa, estabilidad |
+| 4 · Sumativa | Evaluación Sumativa 3 · S4_2 | Titanic | Evaluación y validación final | MLP 2 capas, métricas, curvas, K-Fold, estabilidad y trazabilidad |
 
 ---
 
-# 13. Reproducibilidad
+# 14. Reproducibilidad
 
-## 13.1 Dependencias
+## 14.1 Dependencias
 
 Desde la raíz del repositorio:
 
@@ -796,18 +1064,19 @@ notebook>=7,<8
 ipykernel>=6,<8
 ```
 
-## 13.2 Inicio de Jupyter
+## 14.2 Inicio de Jupyter
 
 ```bash
 jupyter notebook
 ```
 
-## 13.3 Notebooks principales
+## 14.3 Notebooks principales
 
 ```text
 Semana1/notebook/F1_Definicion.ipynb
 Semana2/notebook/F2_Regresion.ipynb
 Semana3/notebook/F3_RedesNeuronales.ipynb
+Semana4/Formativa/notebook/F4_Evaluacion.ipynb
 Semana4/notebook/F4_Evaluacion.ipynb
 ```
 
@@ -824,43 +1093,119 @@ Para reproducir una corrida:
 - **Semana 1:** `load_iris()` está incluido en scikit-learn; además se conserva `iris_original.csv`.
 - **Semana 2:** `fetch_california_housing()` puede requerir acceso a Internet en una primera ejecución si el dataset no está en caché.
 - **Semana 3:** California Housing y Titanic están almacenados localmente dentro de `Semana3/data/`.
-- **Semana 4:** reutiliza la copia local de Titanic de Semana 3 y genera una copia verificable en `Semana4/data/` durante la ejecución.
+- **Semana 4 · Formativa:** reutiliza la copia local de Titanic almacenada en Semana 3.
+- **Semana 4 · Sumativa:** reutiliza la misma fuente Titanic y mantiene su evidencia de datos y controles dentro de `Semana4/data/`.
 
 ---
 
-# 14. Convenciones metodológicas transversales
+# 15. Convenciones metodológicas transversales
 
 A lo largo del proyecto se mantienen los siguientes principios:
 
 - separación entre variable objetivo y predictores;
 - documentación explícita de decisiones técnicas;
 - control de valores faltantes y consistencia de datos;
-- separación explícita entre entrenamiento y prueba; las transformaciones aprendidas se ajustan con entrenamiento y, cuando una partición de prueba ya intervino en selección previa, su condición histórica se declara de forma explícita;
+- separación explícita entre entrenamiento y prueba;
 - ajuste de transformaciones utilizando únicamente entrenamiento cuando corresponde;
+- reajuste del preprocesamiento dentro de cada fold cuando se aplica validación cruzada;
+- declaración explícita de la condición histórica de conjuntos de prueba reutilizados;
 - uso de `random_state=42` para reproducibilidad;
 - métricas coherentes con el tipo de problema;
-- comparación sobre conjuntos de prueba comunes;
+- análisis de matrices de confusión;
 - análisis de generalización;
+- interpretación del costo de falsos positivos y falsos negativos;
+- evaluación de estabilidad mediante validación cruzada;
+- consideración conjunta de tamaño de muestra, costo computacional y estabilidad;
 - trazabilidad entre notebook, outputs, figuras, documentación e informe;
 - conservación de la evidencia histórica de cada fase.
 
 ---
 
-# 15. Informes
+# 16. Informes
 
-| Semana | Informe |
+| Semana / evaluación | Informe |
 |---|---|
 | Semana 1 | [`MCDI504_S1_1_GRUPO6.pdf`](Semana1/informe/MCDI504_S1_1_GRUPO6.pdf) |
 | Semana 2 | [`MCDI504_S2_1_GRUPO6.pdf`](Semana2/informe/MCDI504_S2_1_GRUPO6.pdf) |
 | Semana 3 | [`f3_s03_grupo6.pdf`](Semana3/informe/f3_s03_grupo6.pdf) |
-| Semana 4 | [`MCDI504_S4_2_GRUPO6.pdf`](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf) |
+| Semana 4 · Formativa 4 | [`MCDI504_S4_1_GRUPO6.pdf`](Semana4/Formativa/informe/MCDI504_S4_1_GRUPO6.pdf) |
+| Semana 4 · Sumativa 3 | [`MCDI504_S4_2_GRUPO6.pdf`](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf) |
 
 ---
 
-# 16. Licencia
+# 17. Navegación rápida
+
+## Semana 1
+
+- [Notebook](Semana1/notebook/F1_Definicion.ipynb)
+- [Informe](Semana1/informe/MCDI504_S1_1_GRUPO6.pdf)
+
+## Semana 2
+
+- [Notebook](Semana2/notebook/F2_Regresion.ipynb)
+- [Informe](Semana2/informe/MCDI504_S2_1_GRUPO6.pdf)
+
+## Semana 3
+
+- [README](Semana3/README.md)
+- [Notebook](Semana3/notebook/F3_RedesNeuronales.ipynb)
+- [Informe](Semana3/informe/f3_s03_grupo6.pdf)
+
+## Semana 4 · Formativa
+
+- [README Formativa](Semana4/Formativa/README.md)
+- [Notebook](Semana4/Formativa/notebook/F4_Evaluacion.ipynb)
+- [Informe PDF](Semana4/Formativa/informe/MCDI504_S4_1_GRUPO6.pdf)
+- [Outputs](Semana4/Formativa/outputs/)
+- [Figuras](Semana4/Formativa/figures/)
+- [Documentación](Semana4/Formativa/docs/)
+
+## Semana 4 · Sumativa
+
+- [README Semana 4](Semana4/README.md)
+- [Notebook](Semana4/notebook/F4_Evaluacion.ipynb)
+- [Informe PDF](Semana4/informe/MCDI504_S4_2_GRUPO6.pdf)
+- [Outputs](Semana4/outputs/)
+- [Figuras](Semana4/figures/)
+- [Documentación](Semana4/docs/)
+
+---
+
+# 18. Integridad y trazabilidad
+
+La evidencia computacional y documental del proyecto se conserva mediante:
+
+- notebooks ejecutados;
+- outputs tabulados;
+- figuras derivadas de las corridas;
+- documentación metodológica;
+- informes institucionales;
+- controles de consistencia;
+- manifiestos de artefactos e integridad cuando corresponde.
+
+En Semana 4 se mantienen dos niveles de manifiesto:
+
+```text
+Semana4/Formativa/docs/MANIFIESTO_FORMATIVA_FINAL.csv
+Semana4/docs/MANIFIESTO_REPOSITORIO_FINAL.csv
+```
+
+Esto permite distinguir la evidencia específica de la Evaluación Formativa del control general del proyecto.
+
+---
+
+# 19. Repositorio
+
+Repositorio público:
+
+https://github.com/edocontreras/mcdi504-machine-learning-1
+
+---
+
+# 20. Licencia
 
 Este repositorio utiliza la **MIT License**.
 
 Consultar:
 
-[LICENSE](LICENSE)
+[LICENSE]
